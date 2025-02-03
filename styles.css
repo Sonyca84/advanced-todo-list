@@ -1,8 +1,10 @@
+/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f9;
+    color: #333;
 }
 
 .container {
@@ -17,33 +19,68 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
+/* Поле ввода */
 input[type="text"] {
-    width: 80%;
+    width: calc(100% - 22px); /* Учитываем padding и border */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
+/* Кнопки */
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Зелёный цвет для кнопок */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Темно-зелёный при наведении */
+}
+
+button.delete {
+    background-color: #f44336; /* Красный цвет для кнопки "Удалить" */
+}
+
+button.delete:hover {
+    background-color: #d32f2f; /* Темно-красный при наведении */
+}
+
+button.edit {
+    background-color: #2196F3; /* Синий цвет для кнопки "Редактировать" */
+}
+
+button.edit:hover {
+    background-color: #1976D2; /* Темно-синий при наведении */
+}
+
+/* Фильтры */
+.filters {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .filters button {
     margin-right: 10px;
+    background-color: #FFC107; /* Жёлтый цвет для фильтров */
+    color: black;
 }
 
+.filters button:hover {
+    background-color: #FFA000; /* Темно-жёлтый при наведении */
+}
+
+/* Список задач */
 ul {
     list-style-type: none;
     padding: 0;
@@ -57,18 +94,21 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.completed {
+li.completed span {
     text-decoration: line-through;
     color: gray;
 }
 
-.delete {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+/* Чекбокс */
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Увеличиваем размер чекбокса */
+}
+
+/* Кнопки внутри задачи */
+li button {
+    margin-left: 10px;
 }
